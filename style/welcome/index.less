@@ -1,18 +1,37 @@
-.welcome{
+.loading{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 100%;
+    background-color: #fff;
+    // image 可以base64直接放在html页面里面
+    // 没有加载时间, 只有... 解码时间
+    // background-image: url(../img/loading.jpg);
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 200ms ease, bottom 0ms ease 200ms;
+
     padding-top: 8em;
     text-align: center;
     font-size: 16px;
-    color: #468;
+    color: #456;
     h1{
         font-size: 40px;
     }
-    .foot-tip{
-        position: fixed;
-        bottom: 1em;
-        left: 0;
-        right: 0;
-        text-align: center;
-        font-size: 14px;
-        color: #999;
+    h1, h2{
+        display: inline-block;
+        padding: 10px 20px;
+        // background-color: rgba(0,0,0, 0.25);
+        background-color: rgba(255,255,255, 0.35);
+        border-radius: 4px;
     }
+}
+.welcome{
+    .loading{
+        opacity: 1;
+        bottom: 0;
+    }
+
 }

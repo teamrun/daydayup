@@ -19,7 +19,7 @@ app.on('ready', function() {
   mainWindow = new BrowserWindow({width: 650, height: 800});
 
   // and load the index.html of the app.
-  mainWindow.loadUrl('file://' + __dirname + '/index.html');
+  mainWindow.loadUrl('file://' + __dirname + '/dist/index.html');
   var template = [
       {
         label: 'DayDayUp',
