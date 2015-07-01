@@ -1,0 +1,33 @@
+{
+  "name": "DayDayUp",
+  "version": "0.0.1",
+  "description": "a writer for everyday",
+  "main": "main.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "writer",
+    "md",
+    "diary"
+  ],
+  "jshintConfig": {
+    "esnext": true,
+    "asi": true,
+    "noyield": true
+  },
+  "author": "teamrun",
+  "license": "mit",
+  "devDependencies": {
+    "babelify": "^6.1.2",
+    "browser-sync": "^2.7.13",
+    "browserify": "^10.2.4",
+    "gulp-less": "^3.0.3",
+    "gulp-rename": "^1.2.2",
+    "gulp-util": "^3.0.6",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "dependencies": {
+    "react": "^0.13.3"
+  }
+}
