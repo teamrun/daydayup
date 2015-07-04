@@ -1,5 +1,6 @@
 .loading{
     position: absolute;
+    padding-top: 0;
     top: 0;
     left: 0;
     right: 0;
@@ -11,9 +12,8 @@
     background-size: cover;
     background-position: center;
     opacity: 0;
-    transition: opacity 200ms ease, bottom 0ms ease 200ms;
+    transition: opacity 200ms ease, bottom 0ms ease 200ms, padding 0ms ease 200ms;
 
-    padding-top: 8em;
     text-align: center;
     font-size: 16px;
     color: #456;
@@ -30,6 +30,7 @@
 }
 .welcome{
     .loading{
+        padding-top: 8em;
         opacity: 1;
         bottom: 0;
     }

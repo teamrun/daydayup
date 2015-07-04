@@ -4,7 +4,9 @@ var babelify = require('babelify');
 
 gulp.task('script', function(){
     return browserify({ debug: true })
-        .transform(babelify)
+        .transform(babelify.configure({
+            optional: ["es7.classProperties"]
+        }))
         .require(F.script.main, { entry: true })
         .bundle()
         .pipe(source('app-bundle.js'))
