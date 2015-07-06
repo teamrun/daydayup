@@ -10,5 +10,6 @@ gulp.task('script', function(){
         .require(F.script.main, { entry: true })
         .bundle()
         .pipe(source('app-bundle.js'))
-        .pipe(gulp.dest(F.script.destPath));
+        .pipe(gulp.dest(F.script.destPath))
+        .pipe(reload({stream: true}))
 });

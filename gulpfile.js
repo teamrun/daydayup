@@ -1,5 +1,6 @@
 global.gulp = require('gulp');
 global.$ = require('gulp-load-plugins')();
+var browserSync = require('browser-sync');
 
 global.taskName = process.argv[2];
 
@@ -36,6 +37,21 @@ for(var i in F){
     }
 }
 
+
+global.reload = browserSync.reload;
+// 如果是watch 开启reload服务
+// 开启服务一定要放在gulp.watch的任务之外
+if(taskName == 'watch'){
+    browserSync({
+        notify: false,
+        logPrefix: 'sync',
+        server: './',
+        // 打开浏览器中url的路径
+        startPath: '/dist',
+        reloadOnRestart: true
+    });
+}
+
 gulp.task('verdor', function(){
     gulp.src(F.verdor.main)
         .pipe(gulp.dest(F.verdor.destPath))
@@ -51,7 +67,8 @@ gulp.task('less', function(){
         .pipe($.less({
             dumpLineNumbers: 'comments'
         }))
-        .pipe(gulp.dest(F.css.destPath));
+        .pipe(gulp.dest(F.css.destPath))
+        .pipe(reload({stream: true}))
 })
 
 gulp.task('watch', ['verdor', 'html', 'script', 'less', 'src-watch', 'reload-watch']);

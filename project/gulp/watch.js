@@ -20,5 +20,5 @@ gulp.task('src-watch', function(){
     gulp.watch(F.script.watch, ['script']);
 });
 gulp.task('reload-watch', function(){
-    gulp.watch(F.reloadWatch, [reload]);
+    // gulp.watch(F.reloadWatch, [reload]);
 });

@@ -19,4 +19,5 @@ gulp.task('html', function(){
         .pipe($.replace(/"\.\//g, '"../'))
         .pipe($.replace('{{style}}', styleStr))
         .pipe(gulp.dest(F.verdor.destPath))
+        .pipe(reload({stream: true}))
 });
