@@ -37,20 +37,7 @@ for(var i in F){
     }
 }
 
-
 global.reload = browserSync.reload;
-// 如果是watch 开启reload服务
-// 开启服务一定要放在gulp.watch的任务之外
-if(taskName == 'watch'){
-    browserSync({
-        notify: false,
-        logPrefix: 'sync',
-        server: './',
-        // 打开浏览器中url的路径
-        startPath: '/dist',
-        reloadOnRestart: true
-    });
-}
 
 gulp.task('verdor', function(){
     gulp.src(F.verdor.main)

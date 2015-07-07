@@ -10,7 +10,8 @@ if(taskName == 'watch'){
         server: './',
         // 打开浏览器中url的路径
         startPath: '/dist',
-        reloadOnRestart: true
+        reloadOnRestart: true,
+        browser: []
     });
 }
 
