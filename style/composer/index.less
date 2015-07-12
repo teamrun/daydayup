@@ -5,17 +5,32 @@
     font-size: 16px;
     line-height: 1.75;
     font-family: @fontface;
+    height: 100%;
 }
 
-// .composer-input-ctn{
-//     overflow: hidden;
-//     min-height: 16px * 1.75;
-// }
-.composer-input{
+.composer-input-ctn{
+    overflow: hidden;
+    min-height: 16px * 1.75;
+    height: 0;
     position: absolute;
     top:0;
     left: 0;
     right: 0;
+}
+
+.compose-line,
+.composer-input,
+.ghost-input{
+    padding: 0;
+    margin: 0;
+    min-height: 16px * 1.75;
+    font-size: 16px;
+    line-height: 1.75;
+    font-family: @fontface;
+    word-break: break-all;
+    overflow: hidden;
+}
+.composer-input{
     height: 0;
     resize: none;
     outline: none;
@@ -25,15 +40,7 @@
 .ghost-input{
     display: block;
     width: 100%;
-    padding: 0;
-    margin: 0;
     border: none;
-    min-height: 16px * 1.75;
-    font-size: 16px;
-    line-height: 1.75;
-    font-family: @fontface;
-    word-break: break-all;
-    overflow: hidden;
 }
 .ghost-input{
     position: relative;
