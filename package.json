@@ -22,11 +22,14 @@
     "babelify": "^6.1.2",
     "browser-sync": "^2.7.13",
     "browserify": "^10.2.4",
+    "co": "^4.6.0",
+    "fs-extra": "^0.22.1",
     "gulp-less": "^3.0.3",
     "gulp-load-plugins": "^1.0.0-rc.1",
     "gulp-rename": "^1.2.2",
     "gulp-replace": "^0.5.3",
     "gulp-util": "^3.0.6",
+    "thunkify": "^2.1.2",
     "vinyl-source-stream": "^1.1.0"
   },
   "dependencies": {
