@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>预览markdown</title>
+    <link rel="stylesheet" href="./dist/layout.css">
+    <script src="./dist/marked.js"></script>
+    <style>
+        #ctn{
+            padding: 1em 2em;
+        }
+    </style>
+</head>
+<body>
+    <div id="ctn"></div>
+    <script>
+        var $ = document.querySelector.bind(document);
+
+        $('#ctn').innerHTML = marked('I am using __markdown__.');
+
+        window.addEventListener("message", receiveMessage, false);
+
+        function receiveMessage(event){
+            var text = event.data;
+            $('#ctn').innerHTML = marked(text);
+        }
+    </script>
+</body>
+</html>

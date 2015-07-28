@@ -17,15 +17,15 @@ global.F = {
         destPath: './dist'
     },
     html: {
-        watch: './index.html',
-        main: './index.html',
+        watch: ['./*.html', './views/*.html'],
+        main: ['./*.html', './views/*.html'],
         destFile: './dist/index.html'
     },
     img: {
         loadingBg: './img/loading.jpg'
     },
     verdor: {
-        main: ['node_modules/react/dist/react-with-addons.js'],
+        main: ['node_modules/react/dist/react-with-addons.js', 'node_modules/marked/lib/marked.js'],
         destPath: './dist'
     }
 };
