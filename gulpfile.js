@@ -59,3 +59,4 @@ gulp.task('less', function(){
 })
 
 gulp.task('watch', ['verdor', 'html', 'script', 'less', 'src-watch', 'reload-watch']);
+gulp.task('default', ['verdor', 'html', 'script', 'less']);
