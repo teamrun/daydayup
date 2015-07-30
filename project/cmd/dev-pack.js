@@ -1,8 +1,14 @@
 #!/usr/bin/env node
+var path = require('path');
+
+var fse = require('fs-extra');
 var co = require('co');
 var thunkify = require('thunkify');
-var fse = require('fs-extra');
-var path = require('path');
+var webpack = require('webpack');
+
+var packCode = function(callback){
+    webpack(require('../../webpack.config'), callback);
+}
 
 var APP_PATH = '/Applications/DayDayUp.app/';
 
@@ -12,24 +18,27 @@ var RES_SOURCE = path.resolve(__dirname, '../../');
 var copyR = thunkify(fse.copy);
 
 function padWithSpace(str){
-    return str + ' '.repeat(3-str.length);
+    return str + ' '.repeat(20-str.length);
 }
 
-function echoDoing(){
+function echoDoing(str){
     var count = 0;
     var charArr = ['\\', '|', '/', '-'];
     return setInterval(function(){
         // process.stdout.write('copy ing ' + charArr[count%(charArr.length)] + '\r');
         // \r的参数要求每次的字符串都一样 或者是一直增加, 不能减少
         // 因此此处用空格补齐
-        process.stdout.write('copy ing ' + padWithSpace('.'.repeat(count%4)) + '\r');
+        process.stdout.write(str + padWithSpace('.'.repeat(count%4)) + '\r');
         count++;
     }, 333);
 }
 
 function packDev(){
     co(function*(){
-        var timer = echoDoing();
+        var timer = echoDoing('packing code');
+        yield packCode;
+        clearInterval(timer);
+        timer = echoDoing('coping file');
         yield copyR(RES_SOURCE, RES_DEST, {
             clobber: true,
         });

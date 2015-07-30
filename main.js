@@ -16,10 +16,10 @@ app.on('ready', function() {
   app.commandLine.appendSwitch('js-flags', '--harmony');
 
   // Create the browser window.
-  mainWindow = new BrowserWindow({width: 650, height: 800});
+  mainWindow = new BrowserWindow({width: 1450, height: 800});
 
   // and load the index.html of the app.
-  mainWindow.loadUrl('file://' + __dirname + '/dist/index.html');
+  mainWindow.loadUrl('file://' + __dirname + '/index.html');
   var template = [
       {
         label: 'DayDayUp',

@@ -3,17 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title>DayDayUp</title>
-    <link rel="stylesheet" href="./dist/layout.css">
-    <script src="./lib/env.js"></script>
+    <script>
+        window.pageRequire = function(p){
+            var basePath;
+            if(location.protocol === 'file:'){
+                try{
+                    var path = require('path');
+                    basePath = '/Users/chenllos/Documents/dev/DayDayUp';
+                    require(path.join(basePath, p));
+                }
+                catch(e){}
+            }
+        }
+    </script>
+    <script>
+        window.pageRequire('./lib/browserUseModule.js');
+    </script>
+    <script src="./lib/style-bundle.js"></script>
 </head>
 <body class="welcome">
-    <div class="loading" style="{{style}}">
+    <div class="loading" style="">
         <h1>Welcome to DayDayUp!</h1>
         <h2>your app is loading...</h2>
     </div>
     <main>    </main>
 
-    <script src="./dist/react-with-addons.js"></script>
-    <script src="./dist/app-bundle.js"></script>
+    <script src="./lib/app-bundle.js"></script>
 </body>
 </html>
