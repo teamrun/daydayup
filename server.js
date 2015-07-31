@@ -18,7 +18,8 @@ for( var i in config.entry ){
     }
 }
 // 600ms左右,  sourcemap要1600ms
-config.devtool = 'cheap-module-source-map';
+// config.devtool = 'cheap-module-source-map';
+config.devtool = 'source-map';
 
 new WebpackDevServer(webpack(config), {
     publicPath: config.output.publicPath,
