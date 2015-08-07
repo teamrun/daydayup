@@ -4,7 +4,8 @@
   "description": "a writer for everyday",
   "main": "main.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "dev": "node server.js"
   },
   "keywords": [
     "writer",
