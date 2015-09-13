@@ -4,4 +4,4 @@ node_modules
 dist
 img/loading.*
 
-lib/*bundle.js
+lib/*-bundle.js
