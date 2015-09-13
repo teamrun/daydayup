@@ -1,7 +1,45 @@
 .editor{
+    font-family: 'monaco';
+
+    position: relative;
     min-height: 400px;
-    height: 400px;
+    height: 100%;
     padding: 1.5em;
     padding-top: 3em;
+    overflow: auto;
     background-color: #eee;
+
+    .line{
+        line-height: 1.5;
+        margin-bottom: 2em;
+        word-break: break-all;
+        overflow: hidden;
+    }
+
+    .cursor{
+        position: absolute;
+        height: 24px;
+        width: 10px;
+        background-color: fade(#0095dd, 50%);
+        top: 0px;
+        left: 0;
+
+        border-left: 2px solid #0095dd;
+	}
 }
+
+.blink {
+  animation: blink 1s steps(4, start) infinite;
+  // -webkit-animation: blink 1s steps(5, start) infinite;
+}
+@keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
+
