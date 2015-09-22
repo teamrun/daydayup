@@ -1,0 +1,39 @@
+
+@selectionColor: rgba(255, 255, 0, 0.5);
+
+.editor{
+    // 文本选中的样式
+    &,
+    .line{
+        &::selection{
+            // background: rgba(47, 131, 163, 0.5);
+            background: transparent;
+        }
+    }
+
+    // 提升line的zIndex, 让selection 位于文字下面
+    // 防止在鼠标移动的时候导致移到selection上 错乱
+    .line{
+        position: relative;
+        z-index: 10;
+    }
+
+
+    .selection-ctn{
+        position: absolute;
+        top: 0;
+        left: 0;
+        overflow: visible;
+        -webkit-user-select: none;
+
+
+        .sel-line{
+            position: absolute;
+            top: 0;
+            // 一行文字的高度
+            height: 24px;
+            background-color: @selectionColor;
+            z-index: 1;
+        }
+    }
+}
