@@ -5,3 +5,4 @@ dist
 img/loading.*
 
 lib/*-bundle.js
+*.map

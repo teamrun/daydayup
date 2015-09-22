@@ -5,7 +5,7 @@ var config = require('./webpack.config');
 var port = 3000;
 // for hot replacement
 var extraEntrys = [
-    'webpack-dev-server/client?http://0.0.0.0:'+port,
+    'webpack-dev-server/client?http://localhost:'+port,
     'webpack/hot/only-dev-server'
 ];
 for( var i in config.entry ){
