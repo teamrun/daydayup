@@ -2,7 +2,7 @@
     position: absolute;
     height: 24px;
     width: 10px;
-    background-color: fade(#0095dd, 50%);
+    // background-color: fade(#0095dd, 50%);
     top: 0px;
     left: 0;
 
@@ -11,16 +11,20 @@
 
 
 .blink {
-  animation: blink 1s steps(4, start) infinite;
+  animation: cursor-blink 1s linear infinite;
   // -webkit-animation: blink 1s steps(5, start) infinite;
 }
-@keyframes blink {
-  to {
-    visibility: hidden;
+@keyframes cursor-blink {
+  1% {
+    opacity: 0;
   }
-}
-@-webkit-keyframes blink {
-  to {
-    visibility: hidden;
+  40% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
   }
 }
