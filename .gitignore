@@ -4,5 +4,5 @@ node_modules
 dist
 img/loading.*
 
-lib/*-bundle.js
+lib/dist
 *.map
