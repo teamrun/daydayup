@@ -1,5 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
+var ProgressBarPlugin = require('progress-bar-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -15,7 +16,17 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    new webpack.NoErrorsPlugin(),
+    new ProgressBarPlugin({
+        format: '  build [:bar] :percent (:elapsed seconds)',
+        clear: false,
+        width: 50,
+        // complete: '\u25A0',  // 纯色正方向
+        // complete: '\u2234',  // 三点号(数学里的因为所以)
+        complete: '✓',
+        incomplete: ' ',
+        renderThrottle: 50
+    })
   ],
   resolve: {
     extensions: ['', '.js']
